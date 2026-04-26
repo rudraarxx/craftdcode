@@ -1,0 +1,171 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --card: #f5f5f5;
+  --ring: #606060;
+  --input: #e0e0e0;
+  --muted: #d9d9d9;
+  --accent: #c0c0c0;
+  --border: #d0d0d0;
+  --radius: 0.35rem;
+  --chart-1: #606060;
+  --chart-2: #476666;
+  --chart-3: #909090;
+  --chart-4: #a8a8a8;
+  --chart-5: #c0c0c0;
+  --popover: #f5f5f5;
+  --primary: #606060;
+  --sidebar: #eaeaea;
+  --secondary: #e0e0e0;
+  --background: #f0f0f0;
+  --foreground: #333333;
+  --destructive: #cc3333;
+  --shadow-blur: 0px;
+  --shadow-color: hsl(0 0% 20% / 0.1);
+  --sidebar-ring: #606060;
+  --shadow-spread: 0px;
+  --shadow-opacity: 0.15;
+  --sidebar-accent: #c0c0c0;
+  --sidebar-border: #d0d0d0;
+  --card-foreground: #333333;
+  --shadow-offset-x: 0px;
+  --shadow-offset-y: 2px;
+  --sidebar-primary: #606060;
+  --muted-foreground: #666666;
+  --accent-foreground: #333333;
+  --popover-foreground: #333333;
+  --primary-foreground: #ffffff;
+  --sidebar-foreground: #333333;
+  --secondary-foreground: #333333;
+  --destructive-foreground: #ffffff;
+  --sidebar-accent-foreground: #333333;
+  --sidebar-primary-foreground: #ffffff;
+
+  --black: #000000;
+  --white: #ffffff;
+  --grey: #808080;
+  --slate-dark: #1a1a1a;
+  --transition-smooth: 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  --transition-fast: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dark {
+  --card: #202020;
+  --ring: #a0a0a0;
+  --input: #303030;
+  --muted: #2a2a2a;
+  --accent: #404040;
+  --border: #353535;
+  --chart-1: #a0a0a0;
+  --chart-2: #7e9ca0;
+  --chart-3: #707070;
+  --chart-4: #585858;
+  --chart-5: #404040;
+  --popover: #202020;
+  --primary: #a0a0a0;
+  --sidebar: #1f1f1f;
+  --secondary: #303030;
+  --background: #1a1a1a;
+  --foreground: #d9d9d9;
+  --destructive: #e06666;
+  --sidebar-ring: #a0a0a0;
+  --sidebar-accent: #404040;
+  --sidebar-border: #353535;
+  --card-foreground: #d9d9d9;
+  --sidebar-primary: #a0a0a0;
+  --muted-foreground: #808080;
+  --accent-foreground: #d9d9d9;
+  --popover-foreground: #d9d9d9;
+  --primary-foreground: #1a1a1a;
+  --sidebar-foreground: #d9d9d9;
+  --secondary-foreground: #d9d9d9;
+  --destructive-foreground: #ffffff;
+  --sidebar-accent-foreground: #d9d9d9;
+  --sidebar-primary-foreground: #1a1a1a;
+}
+
+@layer base {
+  * {
+    @apply box-border p-0 m-0;
+  }
+
+  html {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  html::-webkit-scrollbar {
+    display: none;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-inter), sans-serif;
+    line-height: 1.5;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-bodoni), serif;
+    @apply font-bold tracking-tight uppercase leading-none;
+  }
+
+  p {
+    @apply text-muted-foreground max-w-[60ch];
+  }
+
+  a {
+    @apply transition-opacity duration-300;
+  }
+
+  a:hover {
+    @apply opacity-70;
+  }
+}
+
+/* Lenis Recommended Styles */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Utilities */
+.grid-bg {
+  position: fixed;
+  inset: 0;
+  background-image: 
+    linear-gradient(to right, #ffffff05 1px, transparent 1px),
+    linear-gradient(to bottom, #ffffff05 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.section-padding {
+  @apply py-20 md:py-32;
+}
+
+.section-label {
+  @apply text-[10px] text-grey tracking-[0.5em] mb-12 uppercase font-medium;
+}
+
+.section-header {
+  @apply mb-16 md:mb-24;
+}
